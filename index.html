@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Workout & Fitnes Efficiency Prediction</h2>
+        <form method="POST">
+            <div class="row">
+                <!-- Input numerik -->
+                <div class="col-md-6">
+                    <label class="form-label">Age</label>
+                    <input type="number" name="age" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Gender</label>
+                    <select name="gender" class="form-select" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Height (cm)</label>
+                    <input type="number" name="height" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Weight (kg)</label>
+                    <input type="number" name="weight" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Workout Type</label>
+                    <select name="workout_type" class="form-select" required>
+                        <option value="HIIT">HIIT</option>
+                        <option value="Strength">Strength</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="Cardio">Cardio</option>
+                        <option value="Running">Running</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Workout Duration (mins)</label>
+                    <input type="number" name="workout_duration" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Calories Burned</label>
+                    <input type="number" name="calories_burned" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Heart Rate (bpm)</label>
+                    <input type="number" name="heart_rate" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Steps Taken</label>
+                    <input type="number" name="steps_taken" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Distance (km)</label>
+                    <input type="number" name="distance" class="form-control" required>
+                </div>
+
+                <!-- Dropdown untuk input kategorikal -->
+                <div class="col-md-6">
+                    <label class="form-label">Workout Intensity</label>
+                    <select name="workout_intensity" class="form-select" required>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Sleep Hours</label>
+                    <input type="number" name="sleep_hours" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Daily Calories Intake</label>
+                    <input type="number" name="daily_calories_intake" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Resting Heart Rate (bpm)</label>
+                    <input type="number" name="resting_heart_rate" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Mood Before Workout</label>
+                    <select name="mood_before_workout" class="form-select" required>
+                        <option value="Tired">Tired</option>
+                        <option value="Happy">Happy</option>
+                        <option value="Neutral">Neutral</option>
+                        <option value="Stressed">Stressed</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Mood After Workout</label>
+                    <select name="mood_after_workout" class="form-select" required>
+                        <option value="Neutral">Neutral</option>
+                        <option value="Energized">Energized</option>
+                        <option value="Fatigued">Fatigued</option>
+                    </select>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="col-md-12 text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Predict</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Menampilkan Hasil Prediksi -->
+        {% if prediction is not none %}
+            <div class="alert alert-info text-center mt-3">
+                <strong>Prediction: </strong> {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
